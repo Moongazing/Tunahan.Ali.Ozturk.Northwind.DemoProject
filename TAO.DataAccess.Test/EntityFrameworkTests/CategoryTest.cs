@@ -19,9 +19,9 @@ namespace TAO.DataAccess.Test
     [TestMethod]
     public void Get_all_with_parameter_returns_filtered_categories()
     {
-      EfCategoryDal productDal = new EfCategoryDal();
+      EfCategoryDal categoryDal = new EfCategoryDal();
 
-      var result = productDal.GetAll(c => c.CategoryName.Contains("Co"));
+      var result = categoryDal.GetAll(c => c.CategoryName.Contains("Co"));
 
       Assert.AreEqual(2, result.Count);
     }

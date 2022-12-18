@@ -7,10 +7,10 @@ using TAO_Core.Entities;
 
 namespace TAO.Entities.Concrete
 {
-  public class Shipper:IEntity
+  public class Territory:IEntity
   {
-    public int ShipperID { get; set; }
-    public string CompanyName { get; set; }
-    public string Phone { get; set; }
+    public string TerritoryID { get; set; }
+    public string TerritoryDescription{ get; set; }
+    public int RegionID { get; set; }
   }
 }

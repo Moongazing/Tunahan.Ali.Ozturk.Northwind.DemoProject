@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TAO.Core\TAO.Core.csproj" />
+    <ProjectReference Include="..\TAO.DataAccess\TAO.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

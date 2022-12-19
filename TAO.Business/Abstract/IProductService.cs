@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TAO.Entities.ComplexTypes;
 using TAO.Entities.Concrete;
 using TAO_Core.Utilities.Results;
 using TAO_Core.Utilities.Results.Abstract;
@@ -26,7 +27,8 @@ namespace TAO.Business.Abstract
     IDataResult<List<Product>> GetByUnitsOnOrder(short unitsOnOrder);
     IDataResult<List<Product>> GetByUnitsOnOrderLessThanParameter(short unitsOnOrder);
     IDataResult<List<Product>> GetByReoderLevel(short reorderLevel);
-    IDataResult<List<Product>> GetByDiscontinued(bool isDiscntinued);
+    IDataResult<List<Product>> GetByDiscontinued(bool isDiscontinued);
+    IDataResult<List<ProductDetailsDto>> GetProductDetails();
 
 
 

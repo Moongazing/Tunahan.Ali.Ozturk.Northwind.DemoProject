@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TAO.Core\TAO.Core.csproj" />
     <ProjectReference Include="..\TAO.DataAccess\TAO.DataAccess.csproj" />
   </ItemGroup>

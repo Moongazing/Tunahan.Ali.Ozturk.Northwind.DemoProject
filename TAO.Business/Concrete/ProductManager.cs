@@ -83,46 +83,46 @@ namespace TAO.Business.Concrete
       return new SuccessResult(Messages.ProductUpdated);
     }
     [PerformanceAspect(10)]
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<Product>> GetAll()
     {
       return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductListed);
     }
     [PerformanceAspect(10)]
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<Product>> GetByProductId(int productId)
     {
       return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.ProductID == productId), Messages.ProductListedByProductId);
     }
     [PerformanceAspect(10)]
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<Product>> GetByProductName(string productName)
     {
       return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.ProductName == productName || p.ProductName.Contains(productName.ToLower())), Messages.ProductListedByProductName);
     }
     [PerformanceAspect(10)]
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<Product>> GetBySupplierId(int supplierId)
     {
       return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.SupplierID == supplierId),
         Messages.ProductListedBySupplierId);
     }
     [PerformanceAspect(10)]
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<Product>> GetByCategoryId(int categoryId)
     {
       return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryID == categoryId),
         Messages.ProductListedByCategoryId);
     }
     [PerformanceAspect(10)]
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<Product>> GetByUnitPrice(decimal unitPrice)
     {
       return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice == unitPrice),
         Messages.ProductListedByUnitPrice);
     }
     [PerformanceAspect(10)]
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<Product>> GetByMaxUnitPrice(decimal maxUnitPrice, decimal minUnitPrice)
     {
       return new SuccessDataResult<List<Product>>(
@@ -130,51 +130,51 @@ namespace TAO.Business.Concrete
         Messages.ProductListedByMaxAndMinUnitePrice);
     }
     [PerformanceAspect(10)]
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<Product>> GetByUnitsInStock(short unitsInStock)
     {
       return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitsInStock == unitsInStock),
         Messages.ProductListedByUnitsInStock);
     }
     [PerformanceAspect(10)]
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<Product>> GetByUnitStockLessThanParameter(short unitsInStock)
     {
       return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitsInStock < unitsInStock),
         Messages.ProductListedByUnitStockLessThanParameter);
     }
     [PerformanceAspect(10)]
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<Product>> GetByUnitsOnOrder(short unitsOnOrder)
     {
       return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitsOnOrder == unitsOnOrder),
         Messages.ProductListedByUnitOnOrder);
     }
     [PerformanceAspect(10)]
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<Product>> GetByUnitsOnOrderLessThanParameter(short unitsOnOrder)
     {
       return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitsOnOrder < unitsOnOrder),
         Messages.ProductListedByUnitsOnOrderLessThanParameter);
     }
     [PerformanceAspect(10)]
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<Product>> GetByReoderLevel(short reorderLevel)
     {
       return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.ReorderLevel == reorderLevel),
         Messages.ProductListedByReorderLevel);
     }
     [PerformanceAspect(10)]
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<Product>> GetByDiscontinued(bool isDiscontinued)
     {
       return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.Discontinued == isDiscontinued),
         Messages.ProductListedByDiscontinued);
     }
-    [CacheAspect]
+    [CacheAspect(60)]
     public IDataResult<List<ProductDetailsDto>> GetProductDetails()
     {
-      return new SuccessDataResult<List<ProductDetailsDto>>(_productDal.GetProductDetails());
+      return new SuccessDataResult<List<ProductDetailsDto>>(_productDal.GetProductDetails(),Messages.ProductDetailsListed);
     }
   }
 }

@@ -25,6 +25,19 @@ namespace TAO.Business.DependencyResolvers.Autofac
       builder.RegisterType<CategoryManager>().As<ICategoryService>();
       builder.RegisterType<EfCategoryDal>().As<ICategoryDal>();
 
+      builder.RegisterType<CustomerManager>().As<ICustomerService>();
+      builder.RegisterType<EfCustomerDal>().As<ICustomerDal>();
+
+      builder.RegisterType<RegionManager>().As<IRegionService>();
+      builder.RegisterType<EfRegionDal>().As<IRegionDal>();
+
+      builder.RegisterType<TerritoryManager>().As<ITerritoryService>();
+      builder.RegisterType<EfTerritoryDal>().As<ITerritoryDal>();
+
+      builder.RegisterType<ShipperManager>().As<IShipperService>();
+      builder.RegisterType<EfShipperDal>().As<IShipperDal>();
+
+
 
       var assembly = System.Reflection.Assembly.GetExecutingAssembly();
       builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()

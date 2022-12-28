@@ -47,19 +47,19 @@ namespace TAO.Business.Concrete
       _regionDal.Update(region);
       return new SuccessResult(Messages.RegionUpdated);
     }
-    [CacheAspect()]
+    [CacheAspect(60)]
     [PerformanceAspect(10)]
     public IDataResult<List<Region>> GetAll()
     {
       return new SuccessDataResult<List<Region>>(_regionDal.GetAll(),Messages.RegionsListed);
     }
-    [CacheAspect()]
+    [CacheAspect(60)]
     [PerformanceAspect(10)]
     public IDataResult<List<Region>> GetById(int regionId)
     {
       return new SuccessDataResult<List<Region>>(_regionDal.GetAll(r => r.RegionID == regionId),Messages.RegionsListedById);
     }
-    [CacheAspect()]
+    [CacheAspect(60)]
     [PerformanceAspect(10)]
     public IDataResult<List<Region>> GetByDescription(string description)
     {
